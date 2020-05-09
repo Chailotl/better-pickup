@@ -1,0 +1,17 @@
+name: BetterPickup
+description: Greatly improves the drop system
+author: Raus
+main: com.raus.betterPickup.Main
+version: 1.0
+api-version: 1.15
+
+commands:
+  betterpickup:
+    description: Better pickup
+    default: true
+    usage: "Usage: /betterpickup [info|reload]"
+
+permissions:
+  betterpickup.reload:
+    default: op
+    description: Allows you to reload the config

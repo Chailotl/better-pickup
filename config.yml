@@ -1,0 +1,15 @@
+# Whether block drops should automatically be picked up
+autoPickup: true
+
+# How long in ticks until block drops can be picked up (vanilla is 10 ticks)
+blockDropDelay: 10
+
+# Whether block drops should be invulnerable
+invulnerable: true
+
+
+# How long in ticks until dropped items can be picked up (vanilla is 40 ticks)
+playerDropDelay: 20
+
+# How long in ticks until other players can take items you drop
+stealDelay: 40
