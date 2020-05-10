@@ -49,6 +49,24 @@ public class DropListener implements Listener
 				}
 			}
 		}.runTaskTimer(plugin, 0L, 1L);
+
+		new BukkitRunnable()
+		{
+			@Override
+			public void run()
+			{
+				// Iterate through player dropped items
+				Iterator<Map.Entry<Item, Map.Entry<Player, Integer>>> i = playerDrops.entrySet().iterator();
+				while (i.hasNext())
+				{
+					// Clean up
+					if (!i.next().getKey().isValid())
+					{
+						i.remove();
+					}
+				}
+			}
+		}.runTaskTimer(plugin, 0L, 6000L); // Every 5 minutes when items despawn
 	}
 
 	@EventHandler
