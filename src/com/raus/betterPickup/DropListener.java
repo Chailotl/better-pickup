@@ -2,6 +2,7 @@ package com.raus.betterPickup;
 
 import java.util.AbstractMap;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.bukkit.entity.Item;
@@ -29,14 +30,21 @@ public class DropListener implements Listener
 			public void run()
 			{
 				// Iterate through dropped items
-				for (Map.Entry<Item, Player> entry : blockDrops.entrySet())
+				Iterator<Map.Entry<Item, Player>> i = blockDrops.entrySet().iterator();
+				while (i.hasNext())
 				{
 					// Check if item is ready to be picked up
-					if (entry.getKey().getPickupDelay() <= 0)
+					Map.Entry<Item, Player> entry = i.next();
+					Item item = entry.getKey();
+					if (!item.isValid())
+					{
+						i.remove();
+					}
+					else if (item.getPickupDelay() <= 0)
 					{
 						// Teleport to player
-						entry.getKey().teleport(entry.getValue());
-						blockDrops.remove(entry.getKey());
+						item.teleport(entry.getValue());
+						i.remove();
 					}
 				}
 			}
