@@ -1,4 +1,4 @@
-package com.raus.betterPickup;
+package com.chai.betterPickup;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

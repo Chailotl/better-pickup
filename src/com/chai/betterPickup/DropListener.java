@@ -1,4 +1,4 @@
-package com.raus.betterPickup;
+package com.chai.betterPickup;
 
 import java.util.AbstractMap;
 import java.util.HashMap;

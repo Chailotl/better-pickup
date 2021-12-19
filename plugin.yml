@@ -1,7 +1,7 @@
 name: BetterPickup
 description: Greatly improves the drop system
-author: Raus
-main: com.raus.betterPickup.Main
+author: Chai
+main: com.chai.betterPickup.Main
 version: 1.0
 api-version: 1.15
 
